@@ -6,6 +6,6 @@
   2. flask run
 * Define and Access the Database
   1. flask init-db
-* Project Layout
+* Blueprints and Views
 * Project Layout
 * Project Layout

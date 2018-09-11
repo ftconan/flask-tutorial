@@ -8,7 +8,7 @@ import os
 
 from flask import Flask
 
-from flaskr import db
+from flaskr import db, auth
 
 
 def create_app(test_config=None):
@@ -43,5 +43,8 @@ def create_app(test_config=None):
 
     # init db
     db.init_app(app)
+
+    # register auth blueprint module
+    app.register_blueprint(auth.bp)
 
     return app
