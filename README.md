@@ -8,8 +8,7 @@
   1. flask init-db
 * Blueprints and Views
 * Templates
-* Static Files
-* Project Layout
+* Blog Blueprint
 * Project Layout
 * Project Layout
 * Project Layout
