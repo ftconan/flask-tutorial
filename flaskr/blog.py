@@ -4,8 +4,6 @@
 @author: magician
 @date: 2018/9/11
 """
-import functools
-
 from flask import (Blueprint, flash, g, redirect, render_template, request, session, url_for)
 from werkzeug.exceptions import abort
 
