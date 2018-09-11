@@ -13,6 +13,7 @@
   1. venv\Scripts\activate
   2. pip install -e .
   3. pip list
-* Project Layout
+* Test Coverage
+  1. coverage run -m pytest
 * Project Layout
 * Project Layout
