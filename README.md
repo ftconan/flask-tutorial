@@ -7,5 +7,10 @@
 * Define and Access the Database
   1. flask init-db
 * Blueprints and Views
+* Templates
+* Project Layout
+* Project Layout
+* Project Layout
+* Project Layout
 * Project Layout
 * Project Layout
