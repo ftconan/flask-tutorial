@@ -15,5 +15,10 @@
   3. pip list
 * Test Coverage
   1. coverage run -m pytest
-* Project Layout
-* Project Layout
+* Deploy to Production
+  1. pip install wheel
+  2. python setup.py bdist_wheel
+  3. pip install flaskr-1.0.0-py3-none-any.whl
+  4. export FLASK_APP=flaskr
+  5. flask init-db
+* Keep Developing!
