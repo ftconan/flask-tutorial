@@ -22,3 +22,6 @@
   4. export FLASK_APP=flaskr
   5. flask init-db
 * Keep Developing!
+
+# flask-tutorial
+# Quickstart
