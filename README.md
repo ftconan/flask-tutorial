@@ -25,6 +25,10 @@
 
 # flask-restful
 * Quickstart
+* Request Parsing(marshmallow: deserializing objects(loading))
+* Output Fields(marshmallow: serializing objects(dumping))
+* Extending Flask-RESTful
+* Intermediate Usage
 
 # marshmallow
 * Quickstart
