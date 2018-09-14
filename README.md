@@ -29,3 +29,4 @@
 # marshmallow
 * Quickstart
 * nesting schemas
+* extending schemas
