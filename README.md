@@ -30,3 +30,4 @@
 * Quickstart
 * nesting schemas
 * extending schemas
+* examples
