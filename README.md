@@ -42,3 +42,4 @@
 
 # flask-sqlalchemy
 * Quickstart
+* Introduction into Contexts(init_app)
