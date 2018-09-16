@@ -43,3 +43,5 @@
 # flask-sqlalchemy
 * Quickstart
 * Introduction into Contexts(init_app)
+* Configuration(SQLAlchemy configuration)
+* Declaring Models
