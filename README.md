@@ -45,3 +45,11 @@
 * Introduction into Contexts(init_app)
 * Configuration(SQLAlchemy configuration)
 * Declaring Models
+* Select, Insert, Delete
+* Multiple Databases with Binds(SQLALCHEMY_BINDS, bind, __bind_key__)
+* Signalling Support
+* Customizing
+  1. Model Class(db = SQLAlchemy(model_class=IdModel))
+  2. Model Mixins(class Post(TimestampMixin, db.Model))
+  3. Query Class(db = SQLAlchemy(query_class=GetOrQuery))
+  4. Model Metaclass(db = SQLAlchemy(model_class=declarative_base(cls=Model, metaclass=CustomMeta, name='Model')))
