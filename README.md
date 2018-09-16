@@ -23,8 +23,11 @@
       4. export FLASK_APP=flaskr
       5. flask init-db
     * Keep Developing!
- * Templates
- * Testing Flask Applications
+* Templates
+* Testing Flask Applications
+  1. pip install pytest
+* Application Errors
+* Debugging Application Errors
  
 
 # flask-restful
