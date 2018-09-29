@@ -56,3 +56,10 @@
   2. Model Mixins(class Post(TimestampMixin, db.Model))
   3. Query Class(db = SQLAlchemy(query_class=GetOrQuery))
   4. Model Metaclass(db = SQLAlchemy(model_class=declarative_base(cls=Model, metaclass=CustomMeta, name='Model')))
+  
+ # flask-mail
+* Quickstart
+
+# requirement.txt
+* pip freeze > requirements.txt
+* pip install -r requirements.txt
