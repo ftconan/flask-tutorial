@@ -6,10 +6,9 @@
 @date: 2018/11/7
 """
 import sqlalchemy
-from sqlalchemy import create_engine, Column, Integer, String, Sequence, and_, or_, text, func
+from sqlalchemy import create_engine, Column, Integer, String, Sequence, and_, or_, text, func, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, aliased
-
+from sqlalchemy.orm import sessionmaker, aliased, relationship
 
 if __name__ == '__main__':
     # version check
@@ -181,4 +180,19 @@ if __name__ == '__main__':
         print(e)
 
     # building a relationship
-    pass
+    class Address(Base):
+        __tablename__ = 'addresses'
+        id = Column(Integer, primary_key=True)
+        email_address = Column(String, nullable=False)
+        user_id = Column(Integer, ForeignKey('users.id'))
+        user = relationship('User', back_populates='addresses')
+
+        def __repr__(self):
+            return "<Address(email_address='%s')>" % self.email_address
+
+    User.addresses = relationship('Address', order_by=Address.id, back_populates='user')
+
+    Base.metadata.create_all(engine)
+
+    # working with related objects
+    jack = User(name='jack', fullname='Jack Bean', password='gjffdd')
