@@ -24,7 +24,7 @@ manager = Manager(app)
 mail = Mail(app)
 
 
-## 异步发送邮件
+# 异步发送邮件
 def send_async_email(app, msg):
     with app.app_context():
         mail.send(msg)

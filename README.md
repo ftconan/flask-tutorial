@@ -57,6 +57,10 @@
   3. Query Class(db = SQLAlchemy(query_class=GetOrQuery))
   4. Model Metaclass(db = SQLAlchemy(model_class=declarative_base(cls=Model, metaclass=CustomMeta, name='Model')))
   
+ # SQLAlchemy 1.2 documentation
+ ## Object Relational Tutorial
+ 
+  
  # flask-mail
 * Quickstart
 
