@@ -16,6 +16,8 @@
       3. pip list
     * Test Coverage
       1. coverage run -m pytest
+      2. coverage report
+      3. coverage html
     * Deploy to Production
       1. pip install wheel
       2. python setup.py bdist_wheel
