@@ -1,9 +1,9 @@
 # flask-tutorial
 * Tutorial
     * Project Layout
-    * Application Setup
-      1. set FLASK_APP=flaskr
-      2. set FLASK_ENV=development
+    * Application Setup(Linux and Mac)
+      1. export FLASK_APP=flaskr
+      2. export FLASK_ENV=development
       3. flask run
     * Define and Access the Database
       1. flask init-db
