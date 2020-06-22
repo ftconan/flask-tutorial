@@ -16,20 +16,41 @@ bp = Blueprint('blog', __name__)
 @bp.route('/')
 def index():
     """
-    index
+    Show all the posts, most recent first.
     :return:
     """
     db = get_db()
-    posts = db.execute('SELECT p.id, title, body, created, author_id, username FROM post p JOIN user u ON '
-                       'p.author_id = u.id ORDER BY created DESC').fetchall()
+    posts = db.execute('SELECT p.id, title, body, created, author_id, username '
+                       'FROM post p JOIN user u ON p.author_id = u.id '
+                       'ORDER BY created DESC').fetchall()
 
     return render_template('blog/index.html', posts=posts)
+
+
+def get_post(id, check_author=True):
+    """
+    Get a post and its author by id.
+    Checks that the id exists and optionally that the current user is
+    the author.
+    :return:
+    """
+    post = get_db().execute('SELECT p.id, title, body, created, author_id, username '
+                            'FROM post p JOIN user u ON p.author_id = u.id '
+                            'WHERE p.id = ?', (id,)).fetchone()
+
+    if post is None:
+        abort(404, "Post id {0} doesn't exist.".format(id))
+
+    if check_author and post['author_id'] != g.user['id']:
+        abort(403)
+
+    return post
 
 
 @bp.route('/create', methods=('GET', 'POST'))
 def create():
     """
-    create
+    Create a new post for the current user.
     :return:
     """
     if request.method == 'POST':
@@ -51,28 +72,11 @@ def create():
     return render_template('blog/create.html')
 
 
-def get_post(id, check_author=True):
-    """
-    get post
-    :return:
-    """
-    post = get_db().execute('SELECT p.id, title, body, created, author_id, username FROM post p JOIN user u '
-                            'ON p.author_id = u.id WHERE p.id = ?', (id,)).fetchone()
-
-    if post is None:
-        abort(404, "Post id {0} doesn't exist.".format(id))
-
-    if check_author and post['author_id'] != g.user['id']:
-        abort(403)
-
-    return post
-
-
 @bp.route('/<int:id>/update', methods=('GET', 'POST'))
 @login_required
 def update(id):
     """
-    update blog
+    Update a post if the current user is the author.
     :param id:
     :return:
     """
@@ -101,7 +105,9 @@ def update(id):
 @login_required
 def delete(id):
     """
-    delete blog
+    Delete a post.
+    Ensures that the post exists and that the logged in user is the
+    author of the post.
     :param id:
     :return:
     """
